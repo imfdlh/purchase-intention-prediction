@@ -10,7 +10,13 @@ Template by Fadilah, powered by Bootstrap v5.1.
 
 # Source
 
-Obtained from kaggle: <a href="https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset#"> link </a>
+Obtained from UCI ML: <a href="https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset#"> link </a>
+
+This dataset contains user activity on a e-commerce, there are 17 predictor and a target variable that determined whether the user end-up shopping or not after going through the website (simply bring revenue or not). Of the 12,330 sessions in the dataset, 84.5% (10,422) were negative class samples that did not end with shopping, and the rest (1908) were positive class samples ending with shopping.
+
+The dataset consists of 10 numerical and 8 categorical attributes. The 'Revenue' attribute can be used as the class label.
+
+The dataset consists of feature vectors belonging to 12,330 sessions. The dataset was formed so that each session would belong to a different user in a 1-year period to avoid any tendency to a specific campaign, special day, user profile, or period.
 
 # Evaluation
 
