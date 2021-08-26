@@ -17,7 +17,7 @@ The evaluation metrics that will be the main concerned in this project is AUC an
 
 # Insights
 
-You can also see the analysis from here: <a href="https://fadilah-milestone2p1.herokuapp.com/insights" link </a>
+You can also see the analysis from here: <a href="https://fadilah-milestone2p1.herokuapp.com/insights"> link </a>
 
 -	For each customer, If the BounceRates increase then the ExitRates will follow and vice versa. This means, if a customer just leaves the page without doing anything, the ExitRates for that customer will increase.
 -	If a customer has a higher PageValue compared to others, this customer will more likely to bring revenue because they have a high tendency to do shopping.
