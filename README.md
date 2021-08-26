@@ -13,7 +13,7 @@ Obtained from kaggle: <a href="https://archive.ics.uci.edu/ml/datasets/Online+Sh
 
 # Evaluation
 
-The evaluation metrics that will be the main concerned in this project is AUC and Precision. The reason behing this decision is due to the nature of the data that has imbalance class, thus the accuracy won’t represent the model's actual performance. As for Precision, we want to minimize the number of False Positives that happen. This is based on the consideration of which error will bring more harm towards the company, mostly revenue and ROI (Return on Investment). The result of this prediction model can be obtained will be utilized to decide whether to give a promotional voucher or coupon or discount or even rebate towards the customer than predicted to be ended up buying thins (bring revenue). The Redemption rate (the rate of costumer that redeemed a voucher/coupon) will be very low if we have a lot of False Positive, this will also affect the company ROI since they have allocated their budget for promotion/making a campaign.
+The evaluation metrics that will be the main concern in this project are AUC and Precision. The reason behind this decision is due to the nature of the data that has an imbalance class, thus the accuracy won’t represent the model's actual performance. As for Precision, we want to minimize the number of False Positives that happen. This is based on the consideration of which error will bring more harm towards the company, mostly revenue and ROI (Return on Investment). The result of this prediction model can be obtained will be utilized to decide whether to give a promotional voucher or coupon or discount or even rebate towards the customer than predicted to be ended up buying thins (bring revenue). The Redemption rate (the rate of costumer that redeemed a voucher/coupon) will be very low if we have a lot of False Positives, this will also affect the company's ROI since they have allocated their budget for promotion/making a campaign.
 
 # Insights
 
@@ -25,7 +25,7 @@ You can also see the analysis from here: <a href="https://fadilah-milestone2p1.h
 
 **Recommendation**
 
--	Offer voucher to those that have been browsing a lot of similar keywords or clicking through different pages during a session.
+-	Offer vouchers to those that have been browsing a lot of similar keywords or clicking through different pages during a session.
 -	Offer a special voucher for the returning visitor once they marked several similar items, or revisit the items that they’ve visited before to boost their buying urgency.
 
 # Preprocessing
@@ -42,7 +42,7 @@ You can also see the analysis from here: <a href="https://fadilah-milestone2p1.h
 The best algorithm on the base model and best model (hyperparameter tuned) is consistent, which is Random Forest. In Random forest, the most important 10 features are:
 -	PageValues, ExitRates, ProductRelated_Duration, ProductRelated, BounceRates, Administrative_Duration, Month_sin, Administrative, Month_cos, and TrafficType.
 
-Except for PageValues, the score between other predictors doesn’t have a big difference, which means that all of them have similar contribution toward the model capability in predicting the target variable.
+Except for PageValues, the score between other predictors doesn’t have a big difference, which means that all of them have similar contributions toward the model capability in predicting the target variable.
 
 The main evaluation metrics for this project is AUC due to the class imbalance of the target variable. Besides that, the Precision score will also be a concern for this project evaluation based on our objective. If we compare the best score on cross-validation: validation set (test set) between the base model and the best model of the Random Forest, we get a small increase in AUC from 92.36% to 92.93%. For precision, unfortunately, there is a small decrease, from 68% to 67%. Besides the main evaluation metrics, we also successfully increase the F1 from 64% to 67% and Recall from 61% to 68%. These scores are obtained from the mean test score inside the cross-validation.
 
@@ -52,9 +52,9 @@ Amongst the features/predictors, the 3 most important features are PageValues, E
 
 **Best Model**
 
-The best model obtained from best model grid search by tuning them is Random Forest. The hyperparameters of the chosen model is as follows:
+The best model obtained from the best model grid search by tuning them is Random Forest. The hyperparameters of the chosen model are as follows:
 - max_depth=10
 - min_samples_leaf=10
-- The rest of model hyperparameters are set to default.
+- The rest of the model hyperparameters are set to default.
 
 Amongst the classifier, Random Forest tends to be more consistent and stable on all 4 evaluation metrics. The performance also seems to be okay on the new data since this model has an AUC of around 80% on a separate validation set and test set. This model has learned the rules underlying the data that make it can differentiate between class 1 and class 0 (between those customers who will end up buying and bring revenue and the ones that won't). This model also becomes less overfitted towards the training set after hyperparameter tuning has been done. Even so, there is some room for improvement towards this project, we can try another sampling strategy or more hyperparameter on Random Forest to be specific to have more differences between the training and validation performances.
