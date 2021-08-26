@@ -5,7 +5,9 @@ The objective of this project is to classify whether a customer on e-commerce wi
 # Deployment
 
 You can try to predict some values here:
+
 https://fadilah-milestone2p1.herokuapp.com/
+
 Template by Fadilah, powered by Bootstrap v5.1.
 
 # Source
