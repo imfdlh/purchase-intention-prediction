@@ -1,0 +1,70 @@
+{% include "layout/header.html" %}
+{% include "layout/navbar.html" %}
+
+<main>
+
+    <div class="container-md">
+      <div class="row mb-5 mt-5">
+        <div class="col-md" style="padding-left: 2vw; padding-right: 2vw">
+            <h1 class="mb-5 text-center">Insights from Exploratory Data Analysis</h1>
+        </div>
+      </div>
+      <div class="row mb-5 mt-5">
+        <h4 class="text-center">Bounce Rates vs Exit Rates</h4>
+        <div class="col-md" style="padding-left: 2vw; padding-right: 2vw">
+            <div id="chart1" class="chart1"></div>
+        </div>
+      </div>
+      <div class="row mb-5 mt-5">
+        <h4 class="text-center">Intention to Buy based on Customer Page Values</h4>
+        <div class="col-md" style="padding-left: 2vw; padding-right: 2vw">
+            <div id="chart2" class="chart2"></div>
+        </div>
+      </div>
+      <div class="row mb-5 mt-5">
+        <h4 class="text-center">Intention to Buy based on Visitor Type</h4>
+        <div class="col-md-6" style="padding-left: 2vw">
+            <div id="chart3" class="chart3"></div>
+        </div>
+        <div class="col-md-6" style="padding-right: 2vw">
+            <div id="chart4" class="chart4"></div>
+        </div>
+      </div>
+      <div class="row mb-5 mt-5">
+        <h4 class="text-center">Intention to Buy on Weekend</h4>
+        <div class="col-md-6" style="padding-left: 2vw">
+          <h5 class="text-center">Overall Customer</h5>
+            <div id="chart5" class="chart5"></div>
+        </div>
+        <div class="col-md-6" style="padding-right: 2vw">
+          <h5 class="text-center">New Customer</h5>
+            <div id="chart6" class="chart6"></div>
+        </div>
+      </div>
+    </div>
+</main>
+
+{% include "layout/footnotes.html" %}
+{% include "layout/footer.html" %}
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+
+  var graph1 = {{ graph1JSON | safe }};
+  Plotly.plot('chart1', graph1, {});
+
+  var graph2 = {{ graph2JSON | safe }}
+  Plotly.plot('chart2', graph2, {});
+  
+  var graph3 = {{ graph3JSON | safe }}
+  Plotly.plot('chart3', graph3, {});
+
+  var graph4 = {{ graph4JSON | safe }}
+  Plotly.plot('chart4', graph4, {});
+
+  var graph5 = {{ graph5JSON | safe }}
+  Plotly.plot('chart5', graph5, {});
+
+  var graph6 = {{ graph6JSON | safe }}
+  Plotly.plot('chart6', graph6, {});
+</script>

@@ -1,0 +1,74 @@
+{% include "layout/header.html" %}
+{% include "layout/navbar_home.html" %}
+
+<main style="border-bottom: 1px solid #E8E8E8" id="carousel-home">
+
+    <div class="container-md">
+      <div class="row mb-5 mt-5">
+        <div class="col-md" style="padding-left: 2vw; padding-right: 2vw">
+          <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{{ url_for('static', filename='assets/img/carousel/20945214 copy.jpg') }}" class="d-block w-100" alt="picture by freepik">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="{{ url_for('static', filename='assets/img/carousel/20943715 copy.jpg') }}" class="d-block w-100" alt="picture by freepik">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="{{ url_for('static', filename='assets/img/carousel/20943720 copy.jpg') }}" class="d-block w-100" alt="picture by freepik">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="" style="">
+        </div>
+      </div>
+    </div>
+
+</main>
+<section class="expand-md" id="menu-option">
+    <div class="container-md">
+      <div class="row mb-5 mt-5" style="margin: auto; width: 70%;">
+        <div class="col-md-6" style="padding-left: 2vw; padding-right: 2vw">
+          <div class="card">
+            <img src="{{ url_for('static', filename='assets/img/card/vectorjuice_analysis.jpg') }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Insights</h5>
+              <p class="card-text">Analysis result towards the online shoppers purchasing intention dataset.</p>
+              <a href="{{ url_for('insights') }}" class="btn btn-dark">View</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6" style="padding-left: 2vw; padding-right: 2vw">
+          <div class="card">
+            <img src="{{ url_for('static', filename='assets/img/card/vectorjuice_ml.jpg') }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Prediction</h5>
+              <p class="card-text">Predictive modeling of online shoppers intention using Random Forest.</p>
+              <a href="{{ url_for('form') }}" class="btn btn-dark">Input Form</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% include "layout/footnotes.html" %}
+{% include "layout/footer.html" %}

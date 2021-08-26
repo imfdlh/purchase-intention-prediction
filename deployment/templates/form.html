@@ -1,0 +1,264 @@
+{% include "layout/header.html" %}
+{% include "layout/navbar.html" %}
+
+<main>
+
+    <div class="container-md">
+      <div class="row mb-5 mt-5">
+        <div class="col-md" style="padding-left: 2vw; padding-right: 2vw">
+            <h1 class="mb-5 text-center">Form Customer Data</h1>
+
+            {% if show_prediction %}
+              <div class="row g-3">
+                <div class="col-md g-3" style="padding-right: 23px">
+                  <div id ="predicton-result" class ="predicton-result">
+                      <div class="alert alert-info {% if prediction_not_buying %} alert-danger {% endif %} alert-dismissible " role="alert" id="liveAlert">{{ prediction_text }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                      <br>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            <form action="{{ url_for('predict') }}" method ="post" class="row g-3 needs-validation" novalidate>
+
+                <label for="client-data" class="form-label"><h4>Customer Behavioral Data</h4></label>
+                <div class="row g-3 mt-0">
+                  <div class="col-md-6">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Administrative</div>
+                      <input type="number" min=0 class="form-control" placeholder="Administrative" aria-label="Administrative" id="Administrative" name="Administrative" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Duration</div>
+                      <input type="number" min=0 step = 0.000000001 class="form-control" placeholder="time spends" aria-label="time spends" id="Administrative_Duration" name="Administrative_Duration" required>
+                      <div class="input-group-text">secs</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Product Related</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Product Related</div>
+                      <input type="number" min=0 class="form-control" placeholder="Product Related" aria-label="Product Related" id="ProductRelated" name="ProductRelated" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Duration</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Duration</div>
+                      <input type="number" min=0 step = 0.000000001 class="form-control" placeholder="time spends" aria-label="time spends" id="ProductRelated_Duration" name="ProductRelated_Duration" required>
+                      <div class="input-group-text">secs</div>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+                <hr>
+                <br>
+
+                <label for="client-data" class="form-label" style="margin-top: 2rem"><h4>Analytics Metrics</h4></label>
+                <div class="row g-3 mt-0 mb-4">
+                  <div class="col-md-4">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Bounce Rates</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Bounce Rates</div>
+                      <input type="number" min = 0 step = 0.000000001 class="form-control" placeholder="Bounce rates" aria-label="Bounce rates" id="BounceRates" name="BounceRates" required>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Exit Rates</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Exit Rates</div>
+                      <input type="number" min = 0 step = 0.000000001 class="form-control" placeholder="Exit rates" aria-label="Exit rates" id="ExitRates" name="ExitRates" required>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Page Values</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Page Values</div>
+                      <input type="number" min = 0 step = 0.000000001 class="form-control" placeholder="Page values" aria-label="Page values" id="PageValues" name="PageValues" required>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+                <hr>
+                <br>
+
+                <label for="client-data" class="form-label" style="margin-top: 2rem"><h4>Time</h4></label>
+                <div class="row g-3 mt-0 mb-4">
+                  <div class="col-md-3">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Month</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Month</div>
+                        <select class="form-select form-control" aria-label="Month" id="Month" name="Month" required>
+                          <option class ="form-control" selected disabled value="">Choose month</option>
+                          <option class ="form-control" value="1">January</option>
+                          <option class ="form-control" value="2">February</option>
+                          <option class ="form-control" value="3">March</option>
+                          <option class ="form-control" value="4">April</option>
+                          <option class ="form-control" value="5">May</option>
+                          <option class ="form-control" value="6">June</option>
+                          <option class ="form-control" value="7">July</option>
+                          <option class ="form-control" value="8">August</option>
+                          <option class ="form-control" value="9">September</option>
+                          <option class ="form-control" value="10">October</option>
+                          <option class ="form-control" value="11">November</option>
+                          <option class ="form-control" value="12">December</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Special Day</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Special Day</div>
+                        <select class="form-select form-control" aria-label="Special day" id="SpecialDay" name="SpecialDay" required>
+                            <option class ="form-control" selected disabled value="">Was it close to any special day?</option>
+                            <option class ="form-control" value="0">No</option>
+                            <option class ="form-control" value="1">Yes</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Weekend</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Weekend</div>
+                        <select class="form-select form-control" aria-label="Weekend" id="Weekend" name="Weekend" required>
+                            <option class ="form-control" selected disabled value="">Was it on weekend?</option>
+                            <option class ="form-control" value="0">No</option>
+                            <option class ="form-control" value="1">Yes</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+                <hr>
+                <br>
+
+                <label for="client-data" class="form-label" style="margin-top: 2rem"><h4>Visitor Traffics</h4></label>
+                <div class="row g-3 mt-0 mb-4">
+                  <div class="col-md-3">
+                    <label for="VisitorType" class="form-label">Visitor Type:</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="VisitorType" id="VisitorType" value="Returning_Visitor" required>
+                      <label class="form-check-label" for="VisitorType">Returning Visitor</label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="VisitorType" id="VisitorType" value="New_Visitor" required>
+                      <label class="form-check-label" for="VisitorType">New Visitor</label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="VisitorType" id="VisitorType" value="Other" required>
+                      <label class="form-check-label" for="VisitorType">Other</label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-9">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Traffic Type</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Traffic Type</div>
+                        <select class="form-select form-control" aria-label="Traffic type" id="TrafficType" name="TrafficType" required>
+                            <option class ="form-control" selected disabled value="">Choose traffic type</option>
+                            <option class ="form-control" value="1">1st Type</option>
+                            <option class ="form-control" value="2">2nd Type</option>
+                            <option class ="form-control" value="3">3rd Type</option>
+                            <option class ="form-control" value="4">4th Type</option>
+                            <option class ="form-control" value="5">5th Type</option>
+                            <option class ="form-control" value="6">6th Type</option>
+                            <option class ="form-control" value="7">7th Type</option>
+                            <option class ="form-control" value="8">8th Type</option>
+                            <option class ="form-control" value="9">9th Type</option>
+                            <option class ="form-control" value="10">10th Type</option>
+                            <option class ="form-control" value="11">11th Type</option>
+                            <option class ="form-control" value="12">12th Type</option>
+                            <option class ="form-control" value="13">13th Type</option>
+                            <option class ="form-control" value="14">14th Type</option>
+                            <option class ="form-control" value="15">15th Type</option>
+                            <option class ="form-control" value="16">16th Type</option>
+                            <option class ="form-control" value="17">17th Type</option>
+                            <option class ="form-control" value="18">18th Type</option>
+                            <option class ="form-control" value="19">19th Type</option>
+                            <option class ="form-control" value="20">20th Type</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+                <hr>
+                <br>
+
+                <label for="client-data" class="form-label" style="margin-top: 2rem"><h4>Additional</h4></label>
+                <div class="row g-3 mt-0 mb-4">
+                  <div class="col-md-5">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Operating systems</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Operating systems</div>
+                        <select class="form-select form-control" aria-label="Operating systems" id="OperatingSystems" name="OperatingSystems" required>
+                            <option class ="form-control" selected disabled value="">Choose operating systems</option>
+                            <option class ="form-control" value="1">1st Type</option>
+                            <option class ="form-control" value="2">2nd Type</option>
+                            <option class ="form-control" value="3">3rd Type</option>
+                            <option class ="form-control" value="other">Other</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Browser</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Browser</div>
+                       <select class="form-select form-control" aria-label="Browser" id="Browser" name="Browser" required>
+                          <option class ="form-control" selected disabled value="">Choose browser type</option>
+                          <option class ="form-control" value="1">1st Type</option>
+                          <option class ="form-control" value="2">2nd Type</option>
+                          <option class ="form-control" value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <label class="visually-hidden" for="autoSizingInputGroup">Region</label>
+                    <div class="input-group has-validation">
+                      <div class="input-group-text">Region</div>
+                        <select class="form-select form-control" aria-label="Region" id="Region" name="Region" required>
+                            <option class ="form-control" selected disabled value="">Choose region</option>
+                            <option class ="form-control" value="1">1st Region</option>
+                            <option class ="form-control" value="2">2nd Region</option>
+                            <option class ="form-control" value="3">3rd Region</option>
+                            <option class ="form-control" value="4">4th Region</option>
+                            <option class ="form-control" value="5">5th Region</option>
+                            <option class ="form-control" value="6">6th Region</option>
+                            <option class ="form-control" value="7">7th Region</option>
+                            <option class ="form-control" value="8">8th Region</option>
+                            <option class ="form-control" value="9">9th Region</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+
+                <br>
+
+                <div class="row g-3 mt-0 mb-4">
+                  <div class="col-md-12 d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-dark btn-lg" id="liveAlertBtn">Predict</button>
+                  </div>
+                </div>
+
+            </form>
+        </div>
+      </div>
+    </div>
+</main>
+
+{% include "layout/footnotes.html" %}
+{% include "layout/footer.html" %}
