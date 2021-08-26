@@ -18,10 +18,6 @@ The dataset consists of 10 numerical and 8 categorical attributes. The 'Revenue'
 
 The dataset consists of feature vectors belonging to 12,330 sessions. The dataset was formed so that each session would belong to a different user in a 1-year period to avoid any tendency to a specific campaign, special day, user profile, or period.
 
-# Evaluation
-
-The evaluation metrics that will be the main concern in this project are AUC and Precision. The reason behind this decision is due to the nature of the data that has an imbalance class, thus the accuracy won’t represent the model's actual performance. As for Precision, we want to minimize the number of False Positives that happen. This is based on the consideration of which error will bring more harm towards the company, mostly revenue and ROI (Return on Investment). The result of this prediction model can be obtained will be utilized to decide whether to give a promotional voucher or coupon or discount or even rebate towards the customer than predicted to be ended up buying thins (bring revenue). The Redemption rate (the rate of costumer that redeemed a voucher/coupon) will be very low if we have a lot of False Positives, this will also affect the company's ROI since they have allocated their budget for promotion/making a campaign.
-
 # Insights
 
 You can also see the analysis from here: <a href="https://fadilah-milestone2p1.herokuapp.com/insights"> link </a>
@@ -43,6 +39,10 @@ You can also see the analysis from here: <a href="https://fadilah-milestone2p1.h
 4.	Binning the least frequent value of a nominal variable that has been previously encoded to some labels. After that, encode the values using a one-hot encoder.
 5.	Split the dataset into 70% training, 20% validation (separate validation set, different from the one in cross-validation), and 10% test set for model inference.
 6.	Feature Standardization Scaling and SMOTE oversampling (sampling strategy = 1/3) that integrate inside the pipeline for each base model and best model.
+
+# Evaluation
+
+The evaluation metrics that will be the main concern in this project are AUC and Precision. The reason behind this decision is due to the nature of the data that has an imbalance class, thus the accuracy won’t represent the model's actual performance. As for Precision, we want to minimize the number of False Positives that happen. This is based on the consideration of which error will bring more harm towards the company, mostly revenue and ROI (Return on Investment). The result of this prediction model can be obtained will be utilized to decide whether to give a promotional voucher or coupon or discount or even rebate towards the customer than predicted to be ended up buying thins (bring revenue). The Redemption rate (the rate of costumer that redeemed a voucher/coupon) will be very low if we have a lot of False Positives, this will also affect the company's ROI since they have allocated their budget for promotion/making a campaign.
 
 # Model Analysis
 
