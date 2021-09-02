@@ -8,7 +8,7 @@ You can try to predict some values here: https://fadilah-milestone2p1.herokuapp.
 
 Template by Fadilah, powered by Bootstrap v5.1.
 
-# Source
+# Data Source
 
 Obtained from UCI ML: <a href="https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset#"> link </a>
 
